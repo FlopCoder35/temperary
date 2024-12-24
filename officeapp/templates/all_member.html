@@ -3,7 +3,42 @@
 {% block subheading %}List Of Members{% endblock subheading %}
 {% block content %}
 <div class="container">
+  <style>
+    
+    @media (max-width: 768px) {
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; 
+      }
   
+      .table th, .table td {
+        font-size: 8px; 
+        padding: 4px;   
+        white-space: nowrap;
+      }
+  
+     
+      .table {
+        width: 100%;
+        table-layout: auto;
+      }
+    }
+  
+   
+    @media (max-width: 480px) {
+      .table th, .table td {
+        font-size: 6px; 
+        padding: 3px;    
+      }
+    }
+    
+  
+    .table td {
+      word-wrap: break-word;
+    }
+  </style>
+  
+<div class="table-responsive">
   <table class="table table-striped-columns bg-primary">
       <thead>
         <tr>
@@ -35,5 +70,6 @@
         </tbody>
         {% endfor %}
     </table>
+</div>
 </div>
 {% endblock content %}
