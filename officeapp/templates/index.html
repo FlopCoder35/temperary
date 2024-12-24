@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock title %}
+{% block subheading %}Welcome to our management site !{% endblock subheading %}
+{% block content %}
+<div class="container mt-5">
+   <ul class="list-group list-dashboard">
+      <li class="list-group-item"><a class="btn btn-primary text-dark w-100" href="/all_member" role="button">View All Members</a></li>
+      <li class="list-group-item"><a class="btn btn-primary text-dark w-100" href="/add_member" role="button">Add Member (Admin)</a></li>
+      <li class="list-group-item"><a class="btn btn-primary text-dark w-100" href="/remove_member" role="button">Remove Member (Admin)</a></li>
+      <li class="list-group-item"><a class="btn btn-primary text-dark w-100" href="/filter_member" role="button">Filter Member</a></li>
+      <li class="list-group-item"><a class="btn btn-primary text-dark w-100" href="/admin" role="button">Admin Portal</a></li>
+
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,1221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Work-Sphere {% block title %}{% endblock title %}</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'assets/favicon.ico' %}"
+    />
+
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand fst-italic" href="#page-top">
+          InnoSphere Digital
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            {% if request.user.is_authenticated %}
+            <!-- Show logout if the user is authenticated -->
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% else %}
+            <!-- Show login if the user is not authenticated -->
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+      <div class="container">
+        <div
+          class="masthead-subheading bg-dark text-white d-inline px-2 py-1"
+          style="position: relative; top: -15px"
+        >
+          {% block subheading %}{% endblock subheading %}
+        </div>
+        {% block content %}{% endblock content %}
+      </div>
+    </header>
+
+    <!-- Services-->
+    <section class="page-section" id="services">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Services</h2>
+          <h3 class="section-subheading text-muted">
+            Our Expertise in Digital Solutions.!
+          </h3>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">E-commerce Excellence</h4>
+            <p class="text-muted">
+              We build seamless, user-friendly e-commerce platforms that drive
+              sales and enhance customer experiences, ensuring your business
+              thrives online.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-mobile-alt fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">Responsive Design</h4>
+            <p class="text-muted">
+              Our responsive designs ensure your website looks stunning on any
+              device, enhancing user engagement and improving accessibility.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-shield-alt fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">Web Security</h4>
+            <p class="text-muted">
+              We prioritize security, offering robust solutions to protect your
+              website from threats, safeguarding both your business and your
+              customers.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-chart-line fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">Digital Strategy</h4>
+            <p class="text-muted">
+              Our data-driven strategies help you reach your target audience
+              effectively, optimizing digital channels for measurable growth and
+              impact.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">SEO Optimization</h4>
+            <p class="text-muted">
+              We boost your search engine rankings with expert SEO practices,
+              increasing visibility and driving organic traffic to your website.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fas fa-circle fa-stack-2x text-primary"></i>
+              <i class="fas fa-cogs fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="my-3">Web Development</h4>
+            <p class="text-muted">
+              From concept to launch, we create custom websites that are fast,
+              scalable, and built to meet the unique needs of your business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Projects</h2>
+          <h3 class="section-subheading text-muted">
+            Turning Ideas Into Impactful Solutions
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 1-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal1"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/1.jpg' %}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">RetailCo</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  E-commerce Development
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 2-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal2"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/2.jpg' %}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">TechLabs</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  Web Design & UI/UX
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 3-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal3"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/3.jpg' %}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">SecureCorp</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  Cybersecurity Solutions
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+            <!-- Portfolio item 4-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal4"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/4.jpg'%}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">MediaPlus</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  CMS Development
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+            <!-- Portfolio item 5-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal5"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/5.jpg'%}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">HealthTech</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  Mobile Web Development
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <!-- Portfolio item 6-->
+            <div class="portfolio-item">
+              <a
+                class="portfolio-link"
+                data-bs-toggle="modal"
+                href="#portfolioModal6"
+              >
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <i class="fas fa-plus fa-3x"></i>
+                  </div>
+                </div>
+                <img
+                  class="img-fluid"
+                  src="{% static 'assets/img/portfolio/6.jpg'%}"
+                  alt="..."
+                />
+              </a>
+              <div class="portfolio-caption">
+                <div class="portfolio-caption-heading">InnovateInc</div>
+                <div class="portfolio-caption-subheading text-muted">
+                  Cloud Solutions & Automation
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About-->
+    <section class="page-section" id="about">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">About</h2>
+          <h3 class="section-subheading text-muted">
+            Our Journey at WorkSphere
+          </h3>
+        </div>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-image">
+              <img
+                class="rounded-circle img-fluid"
+                src="{% static 'assets/img/about/1.jpg' %}"
+                alt="..."
+              />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>2014-2015</h4>
+                <h4 class="subheading">Our Humble Beginnings</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">
+                  WorkSphere started with a vision to drive business success
+                  through innovation. What began as a small project soon grew
+                  into a trusted industry leader.!
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img
+                class="rounded-circle img-fluid"
+                src="{% static 'assets/img/about/2.jpg' %}"
+                alt="..."
+              />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>March 2016</h4>
+                <h4 class="subheading">An Agency is Born</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">
+                  From a startup to a full-service agency, we built a reputation
+                  for delivering impactful branding, design, and marketing
+                  services that fostered business growth.!
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="timeline-image">
+              <img
+                class="rounded-circle img-fluid"
+                src="{% static 'assets/img/about/3.jpg'%}"
+                alt="..."
+              />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>December 2018</h4>
+                <h4 class="subheading">Full-Service Transition</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">
+                  Expanding into digital strategies, SEO, and web development,
+                  we revolutionized how businesses thrive in a digital-first
+                  world.!
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <img
+                class="rounded-circle img-fluid"
+                src="{% static 'assets/img/about/4.jpg'%}"
+                alt="..."
+              />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>July 2022</h4>
+                <h4 class="subheading">Phase Two: Global Expansion</h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted">
+                  With Phase Two, WorkSphere goes global, empowering businesses
+                  to succeed in new markets with bold solutions and innovative
+                  strategies.!
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <h4>
+                Be Part
+                <br />
+                Of Our
+                <br />
+                Story!
+              </h4>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section bg-light" id="team">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Meet Our Amazing Team!</h2>
+          <h3 class="section-subheading text-muted">
+            Experts committed to your success.
+          </h3>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/1.jpg'%}"
+                alt="..."
+              />
+              <h4>Parveen Anand</h4>
+              <p class="text-muted">Chief Executive Officer (CEO)</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Parveen Anand Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Parveen Anand Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Parveen Anand LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/2.jpg' %}"
+                alt="..."
+              />
+              <h4>Diana Petersen</h4>
+              <p class="text-muted">Chief Marketing Officer (CMO)</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/3.jpg' %}"
+                alt="..."
+              />
+              <h4>Larry Parker</h4>
+              <p class="text-muted">Chief Technology Officer (CTO)</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/4.jpeg' %}"
+                alt="..."
+              />
+              <h4>John Doe</h4>
+              <p class="text-muted">E-commerce Director</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/5.jpeg' %}"
+                alt="..."
+              />
+              <h4>Sophia Williams</h4>
+              <p class="text-muted">Web Security Lead</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Diana Petersen LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="team-member">
+              <img
+                class="mx-auto rounded-circle"
+                src="{% static 'assets/img/team/6.jpeg' %}"
+                alt="..."
+              />
+              <h4>Michael Johnson</h4>
+              <p class="text-muted">Business Development & Strategy Head</p>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Larry Parker Twitter Profile"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Larry Parker Facebook Profile"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="btn btn-dark btn-social mx-2"
+                href="#!"
+                aria-label="Larry Parker LinkedIn Profile"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="large text-muted">
+              We bring together top talent to deliver results that exceed
+              expectations. Your goals are our mission, and we make them a
+              reality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Clients-->
+    <div class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 col-sm-6 my-3">
+            <a href="#!"
+              ><img
+                class="img-fluid img-brand d-block mx-auto"
+                src="{% static 'assets/img/logos/microsoft.svg'%}"
+                alt="..."
+                aria-label="Microsoft Logo"
+            /></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+            <a href="#!"
+              ><img
+                class="img-fluid img-brand d-block mx-auto"
+                src="{% static 'assets/img/logos/google.svg'%}"
+                alt="..."
+                aria-label="Google Logo"
+            /></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+            <a href="#!"
+              ><img
+                class="img-fluid img-brand d-block mx-auto"
+                src="{% static 'assets/img/logos/facebook.svg'%}"
+                alt="..."
+                aria-label="Facebook Logo"
+            /></a>
+          </div>
+          <div class="col-md-3 col-sm-6 my-3">
+            <a href="#!"
+              ><img
+                class="img-fluid img-brand d-block mx-auto"
+                src="{% static 'assets/img/logos/ibm.svg'%}"
+                alt="..."
+                aria-label="IBM Logo"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} contact {% endcomment %}
+    <section class="page-section" id="contact">
+      <div class="container">
+        <div class="text-center">
+          <h2
+            class="section-heading text-uppercase bg-white text-dark d-inline px-2 py-1"
+            style="position: relative; top: -50px"
+          >
+            Contact Us
+          </h2>
+          <br />
+          <h3
+            class="section-subheading bg-white text-dark d-inline px-2 py-1"
+            style="position: relative; top: -20px"
+          >
+          Your Ideas, Our Expertise—Contact Us Now!
+          </h3>
+        </div>
+        <form id="contactForm" method="POST" action="/send-message/">
+          {% csrf_token %}
+          <div class="row align-items-stretch mb-5">
+            <div class="col-md-6">
+              <div class="form-group">
+                <!-- Name input-->
+                <input
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your Name *"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <!-- Email address input-->
+                <input
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Your Email *"
+                  required
+                />
+              </div>
+              <div class="form-group mb-md-0">
+                <!-- Phone number input-->
+                <input
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="Your Phone *"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group form-group-textarea mb-md-0">
+                <!-- Message input-->
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  placeholder="Your Message *"
+                  required
+                ></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- Submit Button-->
+          <div class="text-center">
+            <button
+              class="btn btn-primary btn-xl text-uppercase text-dark"
+              id="submitButton"
+              type="submit"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 text-lg-start">
+            Copyright &copy;InnoSphere Digital 2024. All Rights Reserved.
+          </div>
+          <div class="col-lg-4 my-3 my-lg-0">
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="link-dark text-decoration-none me-3" href="#!"
+              >Privacy Policy</a
+            >
+            <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal1"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">
+                    E-Commerce Platform Development
+                  </h2>
+                  <p class="item-intro text-muted">
+                    Full-fledged online shopping platform
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/1.jpg' %}"
+                    alt="..."
+                  />
+                  <p>
+                    We developed a feature-rich e-commerce platform that
+                    includes secure payment gateways, user-friendly product
+                    browsing, order management, and real-time customer support
+                    features. The platform was designed to handle high traffic
+                    and transactions securely, providing a seamless shopping
+                    experience for users.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      RetailCo
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      E-commerce Development
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">TechLabs Responsive Web Design</h2>
+                  <p class="item-intro text-muted">
+                    Optimized website for seamless mobile and desktop
+                    experience.
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/2.jpg'%}"
+                    alt="..."
+                  />
+                  <p>
+                    We created a fully responsive website for TechLabs that
+                    automatically adapts to various screen sizes and devices.
+                    The design included an intuitive user interface, smooth
+                    navigation, and interactive elements, ensuring a
+                    high-quality user experience on both desktop and mobile
+                    platforms.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      TechLabs
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Web Design & UI/UX
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal3"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">
+                    SecureCorp Web Security Integration
+                  </h2>
+                  <p class="item-intro text-muted">
+                    Enhanced web security for enterprise applications.
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/3.jpg'%}"
+                    alt="..."
+                  />
+                  <p>
+                    Our team integrated advanced security measures, including
+                    SSL encryption, firewall configuration, and multi-factor
+                    authentication, to SecureCorp’s web platform. This enhanced
+                    security ensured that sensitive data was protected against
+                    breaches, providing peace of mind for clients and users.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      SecureCorp
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Cybersecurity Solutions
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 4 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal4"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">
+                    MediaPlus Custom CMS Development
+                  </h2>
+                  <p class="item-intro text-muted">
+                    Content management system for ease of use.
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/4.jpg'%}"
+                    alt="..."
+                  />
+                  <p>
+                    We designed and developed a custom content management system
+                    (CMS) tailored to MediaPlus’s needs, allowing non-technical
+                    users to easily manage, update, and publish content.
+                    Features included media uploads, content categorization, SEO
+                    tools, and an intuitive admin interface.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      MediaPlus
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      CMS Development
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 5 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal5"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">
+                    HealthTech Mobile Web Application
+                  </h2>
+                  <p class="item-intro text-muted">
+                    Mobile-friendly app for healthcare management.
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/5.jpg'%}"
+                    alt="..."
+                  />
+                  <p>
+                    The mobile web application for HealthTech was built to
+                    facilitate the management of patient data, appointments, and
+                    medical records. The app was designed to be mobile-friendly,
+                    offering features like push notifications, easy navigation,
+                    and integration with healthcare providers' systems to
+                    streamline medical processes.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      HealthTech
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Mobile Web Development
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio item 6 modal popup-->
+    <div
+      class="portfolio-modal modal fade"
+      id="portfolioModal6"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-bs-dismiss="modal">
+            <img
+              src="{% static 'assets/img/close-icon.svg'%}"
+              alt="Close modal"
+            />
+          </div>
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="modal-body">
+                  <!-- Project details-->
+                  <h2 class="text-uppercase">
+                    InnovateInc Cloud Business Automation
+                  </h2>
+                  <p class="item-intro text-muted">
+                    Cloud-based business process automation
+                  </p>
+                  <img
+                    class="img-fluid d-block mx-auto"
+                    src="{% static 'assets/img/portfolio/6.jpg'%}"
+                    alt="..."
+                  />
+                  <p>
+                    We helped InnovateInc transition to a cloud-based
+                    infrastructure, automating key business processes such as
+                    inventory management, sales tracking, and customer
+                    relationship management (CRM). This solution enabled the
+                    client to reduce operational costs and improve efficiency,
+                    providing real-time data access and analytics.!
+                  </p>
+                  <ul class="list-inline">
+                    <li>
+                      <strong>Client:</strong>
+                      InnovateInc
+                    </li>
+                    <li>
+                      <strong>Category:</strong>
+                      Cloud Solutions & Automation
+                    </li>
+                  </ul>
+                  <button
+                    class="btn btn-primary btn-xl text-uppercase"
+                    data-bs-dismiss="modal"
+                    type="button"
+                  >
+                    <i class="fas fa-xmark me-1"></i>
+                    Close Project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>

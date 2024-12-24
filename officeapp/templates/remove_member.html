@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Remove Member{% endblock title %}
+{% block subheading %}Remove Member{% endblock subheading %}
+{% block content %}
+<div class="container">
+  <div class="dropdown">
+      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Choose Member to be removed
+      </button>
+      <ul class="dropdown-menu">
+          {%for mem in mems%}
+        <li><a class="dropdown-item" href="/remove_member/{{mem.id}}">{{mem.firstname}} {{mem.lastname}}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock content %}

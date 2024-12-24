@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}Filter{% endblock title %}
+{% block subheading %}Search Member{% endblock subheading %}
+{% block content %}
+<div class="container ">
+   <div class="row justify-content-center">
+       <div class="col-md-3">
+           <form action="/filter_member" method="POST"class="bg-light p-3 rounded text-dark">
+               {% csrf_token %}
+               <label for="firstname">First Name</label>
+               <select id="firstname" name="firstname" class="form-select">
+                  <option value="" class="text-muted" selected>Select FirstName</option>
+                  {% for mem in mems %}
+                      <option value="{{ mem.firstname }}">{{ mem.firstname }}</option>
+                  {% endfor %}
+              </select>
+ 
+               <label for="lastname">Last Name</label>
+               <select id="lastname" name="lastname" class="form-select">
+                  <option value="" class="text-muted" selected>Select LastName</option>
+                  {% for mem in mems %}
+                      <option value="{{ mem.lastname }}">{{ mem.lastname }}</option>
+                  {% endfor %}
+              </select>
+ 
+               <label for="dept">Department</label><br>
+               <select id="dept" name="dept" class="form-select">
+                   <option value="" class="text-muted" selected>Select Department</option>
+                   {% for dept in depts %}
+                       <option value="{{ dept.id }}">{{ dept.name }}</option>
+                   {% endfor %}
+               </select>
+ 
+               <label for="role">Role</label><br>
+               <select id="role" name="role" class="form-select">
+                   <option value=""class="text-muted" selected>Select Role</option>
+                   {% for role in roles %}
+                       <option value="{{ role.id }}">{{ role.name }}</option>
+                   {% endfor %}
+               </select>
+ 
+               <label for="salary">Salary</label>
+               <select id="salary" name="salary" class="form-select">
+                  <option value="" class="text-muted" selected>Select Salary</option>
+                  {% for mem in mems %}
+                      <option value="{{ mem.salary }}">{{ mem.salary }}</option>
+                  {% endfor %}
+              </select>
+ 
+               
+               
+              <br>
+               
+               <button type="submit" class="btn btn-primary">Filter Members</button>
+           </form>
+       </div>
+   </div>
+ </div>
+{% endblock content %}
