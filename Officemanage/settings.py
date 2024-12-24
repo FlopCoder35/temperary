@@ -18,6 +18,9 @@ SECRET_KEY = 'django-insecure-3%=_$xl!_i78b68!xxj0wrveoq4y%qqqviaf72d!j(f)h6-*r%
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://temperary-1.onrender.com',  # Your Render deployment URL
+]
 
 
 
